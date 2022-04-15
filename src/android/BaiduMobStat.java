@@ -9,6 +9,8 @@ import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import com.baidu.mobstat.StatService;
+
 import android.text.TextUtils;
 
 public class BaiduMobStat extends CordovaPlugin {
@@ -28,7 +30,10 @@ public class BaiduMobStat extends CordovaPlugin {
             callbackContext.error("args invalid, error");
         }
 
-        if ("onEvent".equals(action)) {
+        if ("onInit".equals(action)) {
+            StatService.setAuthorizedState(this.getApplicationContext(),true);
+        }
+         else if ("onEvent".equals(action)) {
             String eventId = "";
             String label = "";
             try {
