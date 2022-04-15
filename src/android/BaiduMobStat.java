@@ -31,7 +31,7 @@ public class BaiduMobStat extends CordovaPlugin {
         }
 
         if ("onInit".equals(action)) {
-            StatService.setAuthorizedState(this.getApplicationContext(),true);
+            StatService.setAuthorizedState(this.cordova.getContext(),true);
         }
          else if ("onEvent".equals(action)) {
             String eventId = "";
