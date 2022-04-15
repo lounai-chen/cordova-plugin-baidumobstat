@@ -23,37 +23,40 @@
 	cordova build
 	cordova run android  (cordova run ios)
 	```
-6. MainActivity 初始化的时候,需要注意以下设置
-```
+6. MainActivity 初始化的时候,需要注意以下设置 
+
+	```
 StatService.setAuthorizedState(this.getApplicationContext(),false);// 建议有用户隐私策略弹窗的App，用户未同意前设置false,同意之后设置true
-```
+	```
 
 7. 修改platforms/android/AndroidManifest.xml和platforms/android/android.json和plugins/cordova-plugin-baidumobstat/plugin.xml中的BaiduMobAd_STAT_ID与BaiduMobAd_CHANNEL值. 
       
-修改MainActivity.java,  加入百度统计代码. 
-```
-      import com.baidu.mobstat.StatService;
-      ```
-      ```
-         @Override
-    protected void onResume() {
-        super.onResume();
-        // 
-        StatService.onResume(this);
-    }
+修改MainActivity.java,  加入百度统计代码.  
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        // 
-        StatService.onPause(this);
-    }
-    ```
+	```
+      		import com.baidu.mobstat.StatService;
+     	 ```
+      	```
+         @Override
+	    protected void onResume() {
+		super.onResume();
+		// 
+		StatService.onResume(this);
+	    }
+
+	    @Override
+	    protected void onPause() {
+		super.onPause();
+		// 
+		StatService.onPause(this);
+	    }
+    	```
     
 
-8. 手动引入 build.gradle
-```
-dependencies {
-  compile 'com.baidu.mobstat:mtj-sdk:latest.integration'
-}
-```
+8. 手动引入 build.gradle 
+
+	```
+	dependencies {
+	  compile 'com.baidu.mobstat:mtj-sdk:latest.integration'
+	}
+	```
