@@ -7,6 +7,15 @@ var errorHandle = function(error) {
 
 
 module.exports = {
+	
+
+   onInit: function(
+        success,
+        error        
+    ) {
+       exec(success, error, 'BaiduMobStat', 'onInit', ['']); 
+    }
+	
     //print something to the native console
     onEvent: function(eventId, eventLabel) {
         exec(null, errorHandle, "BaiduMobStat", "onEvent", [eventId, eventLabel]);
