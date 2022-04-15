@@ -14,7 +14,7 @@ module.exports = {
         error        
     ) {
        exec(success, error, 'BaiduMobStat', 'onInit', ['']); 
-    }
+    },
 	
     //print something to the native console
     onEvent: function(eventId, eventLabel) {
