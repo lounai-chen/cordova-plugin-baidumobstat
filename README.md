@@ -17,9 +17,13 @@
 	
 	参考cordova-sample部分
 
-4. build and debug
+5. build and debug
 	
 	```
 	cordova build
 	cordova run android  (cordova run ios)
 	```
+6. MainActivity 初始化的时候,需要注意以下设置
+```
+StatService.setAuthorizedState(this.getApplicationContext(),false);// 建议有用户隐私策略弹窗的App，用户未同意前设置false,同意之后设置true
+```
