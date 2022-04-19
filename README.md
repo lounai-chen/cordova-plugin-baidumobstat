@@ -27,41 +27,10 @@
 
 
 	```
+	import com.baidu.mobstat.StatService;   
+	
 	StatService.setAuthorizedState(this.getApplicationContext(),false);// 建议有用户隐私策略弹窗的App，用户未同意前设置false,同意之后设置true 
 	
 	```
-
-7. 修改platforms/android/AndroidManifest.xml和platforms/android/android.json和plugins/cordova-plugin-baidumobstat/plugin.xml中的BaiduMobAd_STAT_ID与BaiduMobAd_CHANNEL值. 
-      
-8. 修改MainActivity.java,  加入百度统计代码.   
-
-
-	``` 
-      		import com.baidu.mobstat.StatService;   
-	
-         @Override
-	    protected void onResume() {
-		super.onResume();
-		// 
-		StatService.onResume(this);
-	    }
-
-	    @Override
-	    protected void onPause() {
-		super.onPause();
-		// 
-		StatService.onPause(this);
-	    } 
-	    
-    	``` 
-	
-    
-
-9. 手动引入 build.gradle 
-
-	```
-	dependencies {
-	  compile 'com.baidu.mobstat:mtj-sdk:latest.integration'
-	} 
-	
-	```
+ 参考: https://mtj.baidu.com/static/userguide/book/android/sdk/online.html 
+ 
