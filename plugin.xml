@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-baidumobstat" version="1.0.0"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-  
+  xmlns:android="http://schemas.android.com/apk/res/android">
+
   <name>BaiduMobStat</name>
   <description>Cordova Baidu Mobile Analysis Plugin</description>
   <keywords>cordova,baidu,mobile,analysis,baidumobstat</keywords>
@@ -21,52 +21,53 @@
   </platform>
 
   <platform name="android">
-     
+
     <config-file target="config.xml" parent="/*">
       <feature name="BaiduMobStat">
         <param name="android-package" value="com.baidu.mobstat.BaiduMobStat"/>
       </feature>
     </config-file>
- 
 
-    <source-file src="src/android/BaiduMobStat.java"
-        target-dir="src/com/baidu/mobstat"/>
-      
-      <!-- 您从百度网站获取的APP KEY，根据实际您的APP申请的APP_KEY进行修改 -->
- <meta-data
-     android:name="BaiduMobAd_STAT_ID"
-     android:value="xxxxxx" /> 
+    <!-- <lib-file src="src/android/libs/Baidu_Mtj_android_4.0.7.5.jar" /> -->
 
- <!-- 渠道商编号 -->
- <meta-data
-     android:name="BaiduMobAd_CHANNEL"
-     android:value="Baidu Market" />
+    <framework src="src/android/plugin.gradle" custom="true" type="gradleReference"/>
 
- <!-- 是否开启错误日志统计，默认为false -->
- <meta-data
-     android:name="BaiduMobAd_EXCEPTION_LOG"
-     android:value="true" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
 
- <!-- 日志仅在wifi网络下发送，默认为false -->
- <meta-data
-     android:name="BaiduMobAd_ONLY_WIFI"
-     android:value="false" />
 
- <!-- 是否获取基站位置信息 ,默认为true -->
- <meta-data
-     android:name="BaiduMobAd_CELL_LOCATION"
-     android:value="true" />
+    <source-file src="src/android/BaiduMobStat.java" target-dir="src/com/baidu/mobstat"/>
 
- <!-- 是否获取GPS位置信息，默认为true -->
- <meta-data
-     android:name="BaiduMobAd_GPS_LOCATION"
-     android:value="true" />
+    <!-- 您从百度网站获取的APP KEY，根据实际您的APP申请的APP_KEY进行修改 -->
+    <meta-data android:name="BaiduMobAd_STAT_ID" android:value="xxxxxx" />
 
- <!-- 是否获取WIFI位置信息，默认为true -->
- <meta-data
-     android:name="BaiduMobAd_WIFI_LOCATION"
-     android:value="true" />
-      
+    <!-- 渠道商编号 -->
+    <meta-data android:name="BaiduMobAd_CHANNEL" android:value="Baidu Market" />
+
+    <!-- 是否开启错误日志统计，默认为false -->
+    <meta-data android:name="BaiduMobAd_EXCEPTION_LOG" android:value="true" />
+
+    <!-- 日志仅在wifi网络下发送，默认为false -->
+    <meta-data android:name="BaiduMobAd_ONLY_WIFI" android:value="false" />
+
+    <!-- 是否获取基站位置信息 ,默认为true -->
+    <meta-data android:name="BaiduMobAd_CELL_LOCATION" android:value="true" />
+
+    <!-- 是否获取GPS位置信息，默认为true -->
+    <meta-data android:name="BaiduMobAd_GPS_LOCATION" android:value="true" />
+
+    <!-- 是否获取WIFI位置信息，默认为true -->
+    <meta-data android:name="BaiduMobAd_WIFI_LOCATION" android:value="true" />
+
   </platform>
 
 </plugin>
