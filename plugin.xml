@@ -47,6 +47,8 @@
 
     <source-file src="src/android/BaiduMobStat.java" target-dir="src/com/baidu/mobstat"/>
 
+    <config-file target="AndroidManifest.xml" parent="/manifest/application"> 
+    
     <!-- 您从百度网站获取的APP KEY，根据实际您的APP申请的APP_KEY进行修改 -->
     <meta-data android:name="BaiduMobAd_STAT_ID" android:value="xxxxxx" />
 
@@ -66,7 +68,9 @@
     <meta-data android:name="BaiduMobAd_GPS_LOCATION" android:value="true" />
 
     <!-- 是否获取WIFI位置信息，默认为true -->
-    <meta-data android:name="BaiduMobAd_WIFI_LOCATION" android:value="true" />
+    <meta-data android:name="BaiduMobAd_WIFI_LOCATION" android:value="true" /> 
+    
+    </config-file>  
 
   </platform>
 
